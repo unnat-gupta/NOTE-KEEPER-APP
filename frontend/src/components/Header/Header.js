@@ -25,6 +25,10 @@ const Header = ({ setSearch }) => {
     navigate("/");
   };
 
+  const myProfileClickHandler = () => {
+    navigate("/profile");
+  };
+
   return (
     <Navbar expand="lg" className="bg-primary" variant="dark">
       <Container>
@@ -52,9 +56,9 @@ const Header = ({ setSearch }) => {
                 title={userInfo ? userInfo.name : "User"}
                 id="basic-nav-dropdown"
               >
-                <Link to="/profile">
-                  {<NavDropdown.Item> My Profile </NavDropdown.Item>}
-                </Link>
+                <NavDropdown.Item onClick={myProfileClickHandler}>
+                  My Profile
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={logoutHandler}>
                   Logout
