@@ -31,7 +31,7 @@ export const listNotes = () => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `https://notekeeperapi-iaty.onrender.com/notes`,
+      `https://notekeeperapi-iaty.onrender.com/api/notes`,
       config
     );
 
@@ -69,7 +69,7 @@ export const createNoteAction =
       };
 
       const { data } = await axios.post(
-        `https://notekeeperapi-iaty.onrender.com/notes/create`,
+        `https://notekeeperapi-iaty.onrender.com/api/notes/create`,
         { title, content, category },
         config
       );
@@ -108,7 +108,7 @@ export const updateNoteAction =
       };
 
       const { data } = await axios.put(
-        `https://notekeeperapi-iaty.onrender.com/notes/${id}`,
+        `https://notekeeperapi-iaty.onrender.com/api/notes/${id}`,
         { title, content, category },
         config
       );
@@ -145,7 +145,7 @@ export const deleteNoteAction = (id) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.delete(
-      `https://notekeeperapi-iaty.onrender.com/notes/${id}`,
+      `https://notekeeperapi-iaty.onrender.com/api/notes/${id}`,
       config
     );
 

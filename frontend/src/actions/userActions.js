@@ -24,7 +24,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "https://notekeeperapi-iaty.onrender.com/users/login",
+      "https://notekeeperapi-iaty.onrender.com/api/users/login",
       {
         email,
         password,
@@ -62,7 +62,7 @@ export const register = (name, email, password, pic) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "https://notekeeperapi-iaty.onrender.com/users",
+      "https://notekeeperapi-iaty.onrender.com/api/users",
       { name, pic, email, password },
       config
     );
@@ -97,7 +97,7 @@ export const updateProfile = (user) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.post(
-      "https://notekeeperapi-iaty.onrender.com/users/profile",
+      "https://notekeeperapi-iaty.onrender.com/api/users/profile",
       user,
       config
     );

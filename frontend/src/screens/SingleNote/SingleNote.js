@@ -36,7 +36,7 @@ function SingleNote() {
   useEffect(() => {
     const fetching = async () => {
       const { data } = await axios.get(
-        `https://notekeeperapi-iaty.onrender.com/${params.id}`
+        `https://notekeeperapi-iaty.onrender.com/api/${params.id}`
       );
 
       setTitle(data.title);
