@@ -5,12 +5,13 @@ const connectDB = require("./config/db.js");
 const userRoutes = require("./routes/userRoutes.js");
 const noteRoutes = require("./routes/noteRoutes.js");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware.js");
-
+const cors = require("cors");
 const app = express();
 dotenv.config();
 connectDB();
 app.use(express.json());
-
+app.use(cors());
+cors({ credentials: true, origin: "*" });
 app.get("/", (req, res) => {
   res.send("API is running..");
 });
