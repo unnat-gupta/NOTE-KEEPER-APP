@@ -11,7 +11,8 @@ dotenv.config();
 connectDB();
 app.use(express.json());
 app.use(cors());
-cors({ credentials: true, origin: "*" });
+// cors({ credentials: true, origin: "*" });
+app.options("*", cors());
 app.get("/", (req, res) => {
   res.send("API is running..");
 });
